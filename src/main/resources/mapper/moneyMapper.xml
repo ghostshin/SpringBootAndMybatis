@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.MoneyMapper">
+	<resultMap id="resultMap"
+		type="com.example.demo.enity.Money">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="money" property="money" jdbcType="INTEGER" />
+	</resultMap>
+
+	<update id="moneyout">
+
+		
+		update money set money = money - #{money} where id = #{id}
+		
+	</update>
+	
+	
+	<update id="moneyin">
+
+		
+		update money set money = money + #{money} where id = #{id}
+		
+	</update>
+
+
+</mapper>
